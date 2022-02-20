@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookX", "ContactBookX.csproj", "{A3C49072-E2FD-4650-9984-A9938AAF6764}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3C49072-E2FD-4650-9984-A9938AAF6764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C49072-E2FD-4650-9984-A9938AAF6764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C49072-E2FD-4650-9984-A9938AAF6764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C49072-E2FD-4650-9984-A9938AAF6764}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAAE46A8-A881-4B35-B69D-19A77EE18BDF}
+	EndGlobalSection
+EndGlobal
