@@ -62,7 +62,7 @@ namespace ContactBookX.UI
 
             if (isUsernameExist)
             {
-                string warning = " The username is already exist ";
+                string warning = $" The username: '{username}' is already exist ";
                 await _logger.Warning(warning);
 
                 Console.WriteLine(warning);
@@ -75,7 +75,7 @@ namespace ContactBookX.UI
             string lastname = ReadWithLabel("Enter last name:  ");
 
             await _logic.AddUser(username, password, firstname, lastname);
-            await _logger.Information("New user created ");
+            await _logger.Information($"New user: '{username}' created ");
         }
         private async Task SignInToAccount()
         {

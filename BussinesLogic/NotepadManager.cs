@@ -21,17 +21,6 @@ namespace ContactBookX.BussinesLogic
 
         public async Task AddUser(string username, string password, string firstname, string lastname)
         {
-
-            if (_accountsData.Count == 0)
-            {
-                await CacheUsersData();
-            }
-
-            if (_accountsData.ContainsKey(username))
-            {
-                throw new InvalidOperationException(" The username is already exist: ");
-            }
-
             UserInfo user = new UserInfo()
             {
                 UserName = username,
@@ -39,6 +28,8 @@ namespace ContactBookX.BussinesLogic
                 FirstName = firstname,
                 LastName = lastname
             };
+
+            _accountsData.Add(username, user);
             await _userStore.AddUserAsync(user);
         }
 

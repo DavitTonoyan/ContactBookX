@@ -36,7 +36,7 @@ namespace ContactBookX.Logging
 
         public async Task Warning(string warning)
         {
-            string msg = $"Information: {DateTime.Now}  {warning}  \n";
+            string msg = $"Warning: {DateTime.Now}  {warning}  \n";
             await AppendToFileAsync(msg);
         }
 
@@ -44,28 +44,22 @@ namespace ContactBookX.Logging
 
         private async Task AppendToFileAsync(string massage)
         {
-            if (_folderPath == null)
-            {
-                _folderPath = GetFolderName();
-            }
+            CreateFolder();
 
             string fileName = @$"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}-{DateTime.Now.Minute}.txt";
-            string path = _folderPath + "\\" + fileName;
+            string path = "LoggerFolder\\" + fileName;
 
             await File.AppendAllTextAsync(path, massage);
         }
-        private string GetFolderName()
-        {
-            string directory = Directory.GetCurrentDirectory();
 
-            int index = directory.IndexOf("\\bin");
-            string folderPath = directory.Substring(0, index) + "\\LoggerFolder";
-            if (!Directory.Exists(folderPath))
+        private void CreateFolder()
+        {
+            if (!Directory.Exists("LoggerFolder"))
             {
-                Directory.CreateDirectory(folderPath);
+                Directory.CreateDirectory("LoggerFolder");
             }
-            return folderPath;
         }
+
     }
 }
 
